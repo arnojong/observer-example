@@ -1,16 +1,23 @@
-# Typescript startproject
+## Observer
 
-Dit is een leeg startproject voor de oefeningen in CMTTHE01-4 en PRG01-8. 
+The Observer Pattern is a one to many relationship between a subject and its observers.
+When the subject changes, all observers are notified.
+Observers can subscribe and unsubscribe to a subject.
 
-## Het project
+Een event listener is een type observer
 
-- De **docs** map bevat de client side:html en css. De js file wordt hier automatisch in gezet door de compiler.
-- De **dev** map bevat de typescript files.
-- **game.ts** is het startpunt van de app. Hierin staat de window listener die een `new Game()` maakt.
+De observer is dan:
+```
+Class Enemy{
+  Window.addeventlistener(“keydown”)
+}
+```
+En de subject is:
+```
+Class Window{
+  dispatchEvent(“Keydown”)
+}
+```
 
-## Compileren
-- Druk op CMD+SHIFT+B en kies voor `watch mode`. Je `.ts` files worden nu samengevoegd in `main.js`.
-- tsconfig.json bevat instellingen voor het compileren.
-
-## Bekijken
-Open index.html in `localhost`
+Voorbeeld: Een email-notificatie wordt naar je gestuurd wanneer een bepaalde broek weer op voorraad is.
+Het subject is dan de broek, die stuurt een email naar de observers (waaronder jij, omdat je gesubscribed bent op die broek).
